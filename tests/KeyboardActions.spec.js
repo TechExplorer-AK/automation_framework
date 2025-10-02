@@ -5,8 +5,8 @@ test('test1',async({page})=>{
         await page.keyboard.down('ArrowDown');
     }
     // await page.waitForTimeout(3000)
-    await page.keyboard.up('ArrowDown')
-    await page.getByText('Copy Text').click({clickCount:2});
+    await page.keyboard.insertText('ArrowDown')
+    await page.getByText('Copy Text').click({clickCount:2}); 
     //    await page.waitForTimeout(3000)
        await page.locator('#draggable').hover();
        await page.mouse.down();
