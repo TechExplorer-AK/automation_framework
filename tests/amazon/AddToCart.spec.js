@@ -13,7 +13,7 @@ test('test1',async({page})=>{
    let edata=await readMultipleData('Amazon',path.join(__dirname,'../../TestData/data1.xlsx'))
    console.log(edata);
    //=========================================
-   //commmited changes
+   console.log("commmited changes")
    
 //    await hp.searchTF.fill(edata[])
 })
