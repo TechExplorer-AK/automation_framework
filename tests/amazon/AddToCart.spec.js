@@ -5,7 +5,7 @@ import { readMultipleData } from '../../Utility/ReadMultipleData';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-test('test1',async({page})=>{
+test('AddToCart',async({page})=>{
    await page.goto(cdata.url)
    let hp=new Home(page);
     
