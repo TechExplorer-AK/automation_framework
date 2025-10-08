@@ -12,7 +12,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    bat 'npx rim-raf allure-results'
+                    // bat 'npx rim-raf allure-results'
                     def status = bat(script: 'npx playwright test --reporter=html', returnStatus: true)
                     if (status != 0) {
                         echo "Tests failed, but continuing to generate reports..."
