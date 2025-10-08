@@ -3,8 +3,8 @@ import { Login } from '../../pageObjects/Login.page';
 import { Home } from '../../pageObjects/Home.page';
 import { Organizations } from '../../pageObjects/Organizations.page';
 import { CreateOrg } from '../../pageObjects/CreateOrg.page';
-import ldata from '../../TestData/vtigerLogin.json'
-import createorgdata from '../../TestData/createOrg.json'
+import ldata from '../../TestData/vtigerLogin.json' assert { type: 'json' };
+import createorgdata from '../../TestData/createOrg.json' assert { type: 'json' };
 test('login',async ({page}) => {
     await page.goto(ldata.url)
    let lp=new Login(page) ;
