@@ -9,14 +9,27 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
+        stage('Run Smoke Suite') {
             steps {
                 script {
                     // bat 'npx rim-raf allure-results'
-                    def status = bat(script: 'npx playwright test --reporter=html', returnStatus: true)
+                    def status = bat(script: 'npx playwright test --grep "@smoke" --reporter=html', returnStatus: true)
                     if (status != 0) {
                         echo "Tests failed, but continuing to generate reports..."
                     }
+                    
+                }
+            }
+        }
+        stage('Run Regression Suite') {
+            steps {
+                script {
+                    // bat 'npx rim-raf allure-results'
+                    def status = bat(script: 'npx playwright test --grep "@regression" --reporter=html', returnStatus: true)
+                    if (status != 0) {
+                        echo "Tests failed, but continuing to generate reports..."
+                    }
+                    
                 }
             }
         }
